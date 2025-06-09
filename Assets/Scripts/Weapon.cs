@@ -1,12 +1,17 @@
+using System.Numerics;
 using StarterAssets;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    [SerializeField] private GameObject hitVFX;
+    [SerializeField] private Animator animator;
     [SerializeField] private int damageAmount = 10;
-    [SerializeField] ParticleSystem muzzleFlashParticle;
+    [SerializeField] private ParticleSystem muzzleFlashParticle;
 
     StarterAssetsInputs starterAssetsInputs;
+
+    const string SHOOT_STRING = "Recoil";
 
     void Awake()
     {
@@ -23,21 +28,22 @@ public class Weapon : MonoBehaviour
         HandleShoot();
     }
 
-    private bool HandleShoot()
+    private void HandleShoot()
     {
-        if (!starterAssetsInputs.shoot) return false;
+        if (!starterAssetsInputs.shoot) return;
 
         muzzleFlashParticle.Play();
+        animator.Play(SHOOT_STRING, 0, 0f);
+        starterAssetsInputs.ShootInput(false);
+
         RaycastHit hit;
 
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity))
         {
+            Instantiate(hitVFX, hit.point, UnityEngine.Quaternion.identity);
+
             EnemyHealth enemyHealth = hit.collider.GetComponent<EnemyHealth>();
             enemyHealth?.TakeDamage(damageAmount);
-
-            starterAssetsInputs.ShootInput(false);
         }
-
-        return true;
     }
 }
