@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    [SerializeField] WeaponSO weaponSO;
+
     [SerializeField] private GameObject hitVFX;
     [SerializeField] private Animator animator;
-    [SerializeField] private int damageAmount = 10;
     [SerializeField] private ParticleSystem muzzleFlashParticle;
 
     StarterAssetsInputs starterAssetsInputs;
@@ -43,7 +44,7 @@ public class Weapon : MonoBehaviour
             Instantiate(hitVFX, hit.point, UnityEngine.Quaternion.identity);
 
             EnemyHealth enemyHealth = hit.collider.GetComponent<EnemyHealth>();
-            enemyHealth?.TakeDamage(damageAmount);
+            enemyHealth?.TakeDamage(weaponSO.Damage);
         }
     }
 }
