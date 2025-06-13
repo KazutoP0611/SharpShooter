@@ -10,7 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 123924c5c485a0d498bab2b3fa697619, type: 3}
-  m_Name: PIstol
+  m_Name: Pistol
   m_EditorClassIdentifier: 
+  WeaponPrefab: {fileID: 239680623417204666, guid: baeb81efd68b0334b8513a6b6005071a, type: 3}
   Damage: 10
   FireRate: 0.6
+  HitVFX: {fileID: 4161782437404643384, guid: 539f9ba869d71104bb2d97751ea574a0, type: 3}
+  IsAutomatic: 0
