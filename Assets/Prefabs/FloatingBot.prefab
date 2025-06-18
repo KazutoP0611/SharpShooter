@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 1345597235372324599}
   - component: {fileID: 291403716450569907}
   - component: {fileID: 1556269398901149365}
+  - component: {fileID: 3780780031691390606}
   m_Layer: 7
   m_Name: FloatingBot
   m_TagString: Untagged
@@ -152,7 +153,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 30
-  currentHealth: 0
+  explosionParticle: {fileID: 6559680479036246500, guid: 8e7637baf9b021b4c9f9e74b71a22b44, type: 3}
+  sfxSpawnOffset: {x: 0, y: 0.5, z: 0}
+  explosionCapsuleCollider: {fileID: 3780780031691390606}
+  useTheSameRadiusAsPlayerDetectExplosion: 0
+  explosionRadius: 0
 --- !u!195 &1345597235372324599
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -220,6 +225,29 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!136 &3780780031691390606
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3165311777795486129}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.45, z: 0}
 --- !u!1 &3497477480439695167
 GameObject:
   m_ObjectHideFlags: 0
