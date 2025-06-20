@@ -35,7 +35,7 @@ public class EnemyHealth : MonoBehaviour
         spawnPosition += sfxSpawnOffset;
 
         Explosion explosion = Instantiate(explosionParticle, spawnPosition, Quaternion.identity).GetComponent<Explosion>();
-        explosion.SetExplosionRadius(useTheSameRadiusAsPlayerDetectExplosion ? explosionCapsuleCollider.radius : explosionRadius);
+        explosion.SetExplosionRadius(useTheSameRadiusAsPlayerDetectExplosion ? (explosionCapsuleCollider ? explosionCapsuleCollider.radius : explosionRadius) : explosionRadius);
         explosion.Explode();
 
         Destroy(gameObject);
