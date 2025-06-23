@@ -1,5 +1,4 @@
 using StarterAssets;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.AI;
 

@@ -9,6 +9,7 @@ public class Turret : MonoBehaviour
     [SerializeField] float fireDistanceThreshold = 8f;
 
     [Header("Projectile Settings")]
+    [SerializeField] LayerMask hitLayerMask;
     [SerializeField] Transform projectileSpawnPoint;
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] float fireProjectileSetInSecs = 3f;
@@ -20,6 +21,10 @@ public class Turret : MonoBehaviour
 
     PlayerHealth playerHealth;
     bool fired = false;
+    const string PLAYER_TAG_STRING = "Player";
+
+    Coroutine FireSetProjectile;
+    Coroutine FireProjectileBullet;
 
     void Start()
     {
@@ -31,20 +36,37 @@ public class Turret : MonoBehaviour
     {
         if (playerHealth)
         {
-            turretHead.LookAt(playerTargetPoint);
-
-            if (Vector3.Magnitude(transform.position - playerTargetPoint.position) < fireDistanceThreshold)
+            if ((transform.position - playerTargetPoint.position).magnitude < fireDistanceThreshold)
             {
-                if (!fired)
+                turretHead.LookAt(playerTargetPoint);
+                //Debug.LogWarning((transform.position - playerTargetPoint.position).magnitude);
+                RaycastHit hit;
+                Physics.Raycast(projectileSpawnPoint.position, projectileSpawnPoint.transform.forward, out hit, 1000f, hitLayerMask);
+
+                if (!fired && hit.collider.CompareTag(PLAYER_TAG_STRING))
                 {
+                    //Debug.Log(hit.collider.gameObject.name);
                     fired = true;
-                    StartCoroutine(FireSetOfProjectile());
+                    FireSetProjectile = StartCoroutine(FireSetOfProjectile());
+                }
+
+                if (fired && !hit.collider.CompareTag(PLAYER_TAG_STRING))
+                {
+                    fired = false;
+                    StopCoroutine(FireSetProjectile);
+                    StopCoroutine(FireProjectileBullet);
                 }
             }
             else
             {
-                StopCoroutine(FireSetOfProjectile());
-                fired = false;
+                if (fired)
+                    fired = false;
+
+                if (FireSetProjectile != null && FireProjectileBullet != null)
+                {
+                    StopCoroutine(FireSetProjectile);
+                    StopCoroutine(FireProjectileBullet);
+                }
             }
         }
     }
@@ -53,8 +75,7 @@ public class Turret : MonoBehaviour
     {
         while (playerHealth)
         {
-            Debug.Log("Fired");
-            StartCoroutine(FireProjectile());
+            FireProjectileBullet = StartCoroutine(FireProjectile());
             yield return new WaitForSeconds(numberOfProjectileInSet * fireEverySecs);
             yield return new WaitForSeconds(fireProjectileSetInSecs);
         }
@@ -64,8 +85,6 @@ public class Turret : MonoBehaviour
     {
         for (int i = 0; i < numberOfProjectileInSet; i++)
         {
-            //Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
-
             Projectile projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity).GetComponent<Projectile>();
             projectile.transform.LookAt(playerTargetPoint);
             projectile.Init(projectileDamage);

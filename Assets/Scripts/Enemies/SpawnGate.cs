@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class SpawnGate : MonoBehaviour
 {
+    [SerializeField] GameManager gameManager;
+
     [Header("Enemy Spawn Settings")]
     [SerializeField] float waitSecsForBeginSpawnLoop = 0f;
     [SerializeField] GameObject botPrefab;
@@ -27,7 +29,9 @@ public class SpawnGate : MonoBehaviour
     {
         while (playerHealth)
         {
-            Instantiate(botPrefab, spawnPoint.position, spawnPoint.rotation);
+            EnemyHealth enemyHealthComponent = Instantiate(botPrefab, spawnPoint.position, spawnPoint.rotation).GetComponent<EnemyHealth>();
+            enemyHealthComponent.Init(gameManager);
+            
             yield return new WaitForSeconds(spawnEnemyEverySecs);
         }
     }

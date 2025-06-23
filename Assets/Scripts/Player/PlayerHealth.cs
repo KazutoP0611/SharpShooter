@@ -2,6 +2,9 @@ using Cinemachine;
 using UnityEngine.UI;
 using UnityEngine;
 using System.Linq;
+using StarterAssets;
+using System;
+using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -9,11 +12,13 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] CinemachineVirtualCamera deathVirtualCamera;
     [SerializeField] Transform weaponCameraTransform;
     [SerializeField] Image[] shieldBars;
+    [SerializeField] TMP_Text hpText;
     [SerializeField] GameObject gameoverPanel;
 
-    int currentHealth;
-    int gameOverVirtualCameraPriority = 20;
+    float currentHealth;
+    int gameOverVirtualCameraPriority = 20; //The more the number, the more priority it will have.
     int eachBarValue;
+    GameManager gameManager;
 
     private void Awake()
     {
@@ -23,6 +28,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
+        gameManager = FindFirstObjectByType<GameManager>();
         UpdateShieldUI();
     }
 
@@ -42,14 +48,15 @@ public class PlayerHealth : MonoBehaviour
         weaponCameraTransform.parent = null;
         deathVirtualCamera.Priority = gameOverVirtualCameraPriority;
 
-        gameoverPanel.SetActive(true);
+        gameManager.GameOver();
 
         Destroy(gameObject);
     }
 
     private void UpdateShieldUI()
     {
-        int currentBarAmount = currentHealth / eachBarValue;
+        hpText.text = currentHealth.ToString();
+        int currentBarAmount = (int)Math.Ceiling(currentHealth / eachBarValue);
         for (int i = 0; i < shieldBars.Length; i++)
         {
             shieldBars[i].enabled = (i < currentBarAmount);

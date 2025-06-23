@@ -1,8 +1,12 @@
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    [SerializeField] GameManager gameManager;
+
+    [Header("General Settings")]
     [SerializeField] int maxHealth = 30;
     [SerializeField] GameObject explosionParticle;
     [SerializeField] Vector3 sfxSpawnOffset;
@@ -11,12 +15,33 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] CapsuleCollider explosionCapsuleCollider;
     [SerializeField] bool useTheSameRadiusAsPlayerDetectExplosion = true;
     [SerializeField] float explosionRadius;
-
+    
     int currentHealth;
+    bool updateEnemyCount = false;
 
     private void Awake()
     {
         currentHealth = maxHealth;
+    }
+
+    private void Start()
+    {
+        if (gameManager && !updateEnemyCount)
+        {
+            gameManager.UpdateEnemyCount(1);
+            updateEnemyCount = true;
+        }
+    }
+
+    public void Init(GameManager gameManager)
+    {
+        this.gameManager = gameManager;
+
+        if (!updateEnemyCount)
+        {
+            gameManager.UpdateEnemyCount(1);
+            updateEnemyCount = true;
+        }
     }
 
     public void TakeDamage(int damage)
@@ -37,6 +62,8 @@ public class EnemyHealth : MonoBehaviour
         Explosion explosion = Instantiate(explosionParticle, spawnPosition, Quaternion.identity).GetComponent<Explosion>();
         explosion.SetExplosionRadius(useTheSameRadiusAsPlayerDetectExplosion ? (explosionCapsuleCollider ? explosionCapsuleCollider.radius : explosionRadius) : explosionRadius);
         explosion.Explode();
+
+        gameManager.UpdateEnemyCount(-1);
 
         Destroy(gameObject);
     }
