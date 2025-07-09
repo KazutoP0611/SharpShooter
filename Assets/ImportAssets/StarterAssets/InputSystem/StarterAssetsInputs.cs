@@ -21,21 +21,25 @@ namespace StarterAssets
 		[Header("Mouse Cursor Settings")]
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
+		public bool canMove = true;
 
-        private void Start()
-        {
-			SetCursorState(true);
-        }
+		private void Start()
+		{
+			SetCursorState(false);
+		}
 
 #if ENABLE_INPUT_SYSTEM
-        public void OnMove(InputValue value)
+		public void OnMove(InputValue value)
 		{
-			MoveInput(value.Get<Vector2>());
+			if (canMove)
+			{
+				MoveInput(value.Get<Vector2>());
+			}
 		}
 
 		public void OnLook(InputValue value)
 		{
-			if(cursorInputForLook)
+			if (cursorInputForLook)
 			{
 				LookInput(value.Get<Vector2>());
 			}
@@ -53,7 +57,10 @@ namespace StarterAssets
 
 		public void OnShoot(InputValue value)
 		{
-			ShootInput(value.isPressed);
+			if (canMove)
+			{
+				ShootInput(value.isPressed);
+			}
 		}
 
 		public void OnZoom(InputValue value)
@@ -66,7 +73,7 @@ namespace StarterAssets
 		public void MoveInput(Vector2 newMoveDirection)
 		{
 			move = newMoveDirection;
-		} 
+		}
 
 		public void LookInput(Vector2 newLookDirection)
 		{
@@ -92,7 +99,7 @@ namespace StarterAssets
 		{
 			zoom = newZoomState;
 		}
-		
+
 		private void OnApplicationFocus(bool hasFocus)
 		{
 			SetCursorState(cursorLocked);
@@ -101,6 +108,20 @@ namespace StarterAssets
 		public void SetCursorState(bool newState)
 		{
 			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
+			Debug.LogWarning(Cursor.lockState);
+			//Cursor.visible = true;
+		}
+
+		public void SetGetInputLookInput(bool getInput)
+		{
+			cursorInputForLook = getInput;
+		}
+
+		public void SetCanMove(bool canMove)
+		{
+			this.canMove = canMove;
+
+			if (!canMove) shoot = false;
 		}
 	}
 	

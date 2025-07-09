@@ -31,7 +31,7 @@ public class SpawnGate : MonoBehaviour
         {
             EnemyHealth enemyHealthComponent = Instantiate(botPrefab, spawnPoint.position, spawnPoint.rotation).GetComponent<EnemyHealth>();
             enemyHealthComponent.Init(gameManager);
-            
+
             yield return new WaitForSeconds(spawnEnemyEverySecs);
         }
     }

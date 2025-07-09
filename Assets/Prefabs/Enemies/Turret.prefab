@@ -148,8 +148,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4161985537882761906}
-  - component: {fileID: 1548351172977188253}
   - component: {fileID: 2272673776508572859}
+  - component: {fileID: 1548351172977188253}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -173,6 +173,30 @@ Transform:
   - {fileID: 5802912008460420447}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &2272673776508572859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2928050377321625236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8271f240dbda4f438e0c5bb1d655d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretHead: {fileID: 7617173006719383247}
+  playerTargetPoint: {fileID: 0}
+  fireDistanceThreshold: 25
+  hitLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  projectileSpawnPoint: {fileID: 4583047318854237051}
+  projectilePrefab: {fileID: 7738204790161465733, guid: 4efc9c3136bb25e448f6d5c9e78786ef, type: 3}
+  fireProjectileSetInSecs: 2
+  numberOfProjectileInSet: 4
+  fireEverySecs: 0.2
+  projectileDamage: 5
 --- !u!114 &1548351172977188253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,30 +216,6 @@ MonoBehaviour:
   explosionCapsuleCollider: {fileID: 0}
   useTheSameRadiusAsPlayerDetectExplosion: 1
   explosionRadius: 2
---- !u!114 &2272673776508572859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2928050377321625236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8271f240dbda4f438e0c5bb1d655d74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turretHead: {fileID: 7617173006719383247}
-  playerTargetPoint: {fileID: 0}
-  fireDistanceThreshold: 25
-  playerLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  projectileSpawnPoint: {fileID: 4583047318854237051}
-  projectilePrefab: {fileID: 7738204790161465733, guid: 4efc9c3136bb25e448f6d5c9e78786ef, type: 3}
-  fireProjectileSetInSecs: 2
-  numberOfProjectileInSet: 4
-  fireEverySecs: 0.2
-  projectileDamage: 5
 --- !u!1 &4401874864399001650
 GameObject:
   m_ObjectHideFlags: 0
