@@ -1,12 +1,10 @@
-# Low Poly FPS Shooter
+# FPS Sharp Shooter : Survive!
 
-#### 🔫 Low Poly FPS Prototype
+#### 🔫 Survive!
 A first-person shooter prototype built in Unity, focused on modular weapon systems, AI behavior using NavMesh, and structured object-oriented programming design.
-
 This project emphasizes scalable weapon architecture, enemy AI interaction, and gameplay systems such as reloading, magazine management, and ranged combat behavior.
 
-<img src="your-screenshot-link-here" width="854" />
-
+<img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/89c39788-5a18-4477-a490-6af0299d5146" />
 
 ---
 
@@ -22,7 +20,7 @@ This project emphasizes scalable weapon architecture, enemy AI interaction, and 
 ---
 
 #### 🎥 Gameplay Video
-[Watch Gameplay Video](your-video-link-here)
+[Watch Gameplay Video](https://youtu.be/KgOUQAODu4I)
 
 ---
 
@@ -31,7 +29,8 @@ This project emphasizes scalable weapon architecture, enemy AI interaction, and 
 ### 🔫 Weapon System
 - Multiple weapon types (pistol, machine gun, rifle)
   - <img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/2c7b01e4-757f-4777-948f-67532b35d846" />
-  - 
+  - <img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/441a6680-4d38-4fef-8901-79c8b666ec25" />
+  - <img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/f71626e1-7a21-40f2-9ad3-4043f5b6e766" />
 
 - Shared base weapon class using OOP principles
 - Magazine-based ammo system
@@ -46,10 +45,15 @@ Weapons share a common structure for handling:
 
 ### 🤖 Enemy AI System
 - Enemies spawn from multiple locations
+
+<img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/41d2a51f-2deb-4437-9139-9b9177631bd8" />
+
 - NavMesh-based pathfinding to chase the player
 - Cannon-type enemy:
   - Detects player within range
   - Shoots at the player when in attack range
+
+ <img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/bedb0263-d0d9-4626-8729-582487fce191" />
 
 ---
 
@@ -64,6 +68,10 @@ Weapons share a common structure for handling:
 - Build a reusable weapon components
 - Practice OOP structure for gameplay systems
 - Camera management, change camera's fov when using sniper's normal aim & sniping aim
+
+<img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/a4330c0f-97e9-4959-a9fd-23116bffa600" />
+<img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/0a2b9f9a-efd9-4d26-94f8-db3bb00f70ae" />
+
 - Create a clean, extendable combat prototype
 
 ---
