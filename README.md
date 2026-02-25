@@ -36,7 +36,7 @@ This project emphasizes scalable weapon architecture, enemy AI interaction, and 
 - Base Weapon class with inherited weapon types (Pistol, Rifle, Machine Gun)
 - Polymorphic shooting behavior handled through overridden methods
 
-## 🔗 Weapons share a common structure for handling:
+#### 🔗 Weapons share a common structure for handling:
 - Fire rate
 - Weapon type
 - Damage dealing
