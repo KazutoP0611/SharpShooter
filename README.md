@@ -48,7 +48,12 @@ Weapons share a common structure for handling:
 
 <img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/41d2a51f-2deb-4437-9139-9b9177631bd8" />
 
+
 - NavMesh-based pathfinding to chase the player
+
+<img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/eff08f9a-847d-48ae-9bf8-092710844b31" />
+
+
 - Cannon-type enemy:
   - Detects player within range
   - Shoots at the player when in attack range
@@ -71,6 +76,7 @@ Weapons share a common structure for handling:
 
 <img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/a4330c0f-97e9-4959-a9fd-23116bffa600" />
 <img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/0a2b9f9a-efd9-4d26-94f8-db3bb00f70ae" />
+
 
 - Create a clean, extendable combat prototype
 
