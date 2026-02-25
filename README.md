@@ -14,7 +14,7 @@ This project emphasizes scalable weapon architecture, enemy AI interaction, and 
 - Unity NavMesh for AI pathfinding
 - Object-Oriented weapon system architecture
 - Modular shooting & reload system
-- Magazine and ammo data managed through Scritable Object
+- Weapon stats and magazine data stored using ScriptableObjects for easy balancing and reuse
 - Enemy spawn system with multiple spawn points
 
 ---
@@ -32,8 +32,9 @@ This project emphasizes scalable weapon architecture, enemy AI interaction, and 
   - <img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/441a6680-4d38-4fef-8901-79c8b666ec25" />
   - <img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/f71626e1-7a21-40f2-9ad3-4043f5b6e766" />
 
-- Shared base weapon class using OOP principles
 - Magazine-based ammo system
+- Base Weapon class with inherited weapon types (Pistol, Rifle, Machine Gun)
+- Polymorphic shooting behavior handled through overridden methods
 
 Weapons share a common structure for handling:
 - Fire rate
@@ -70,9 +71,9 @@ Weapons share a common structure for handling:
 ---
 
 #### 📌 Design Goals
-- Build a reusable weapon components
+- Build reusable weapon components
 - Practice OOP structure for gameplay systems
-- Camera management, change camera's fov when using sniper's normal aim & sniping aim
+- Dynamic camera FOV adjustment when switching between normal aim and sniper scope
 
 <img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/a4330c0f-97e9-4959-a9fd-23116bffa600" />
 <img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/0a2b9f9a-efd9-4d26-94f8-db3bb00f70ae" />
