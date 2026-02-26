@@ -29,9 +29,14 @@ This project emphasizes scalable weapon architecture, enemy AI interaction, and 
 ##### 🔫 Weapon System
 - Multiple weapon types (pistol, machine gun, rifle)
 
-  - <img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/2c7b01e4-757f-4777-948f-67532b35d846" />
-  - <img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/441a6680-4d38-4fef-8901-79c8b666ec25" />
-  - <img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/f71626e1-7a21-40f2-9ad3-4043f5b6e766" />
+  - Pistol
+    <img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/2c7b01e4-757f-4777-948f-67532b35d846" />
+
+  - Machine Gun
+    <img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/441a6680-4d38-4fef-8901-79c8b666ec25" />
+    
+  - Sniper Rifle
+    <img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/f71626e1-7a21-40f2-9ad3-4043f5b6e766" />
 
 - Magazine-based ammo system
 - Base Weapon class with inherited weapon types (Pistol, Rifle, Machine Gun)
