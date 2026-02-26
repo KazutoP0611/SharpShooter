@@ -8,7 +8,7 @@ This project emphasizes scalable weapon architecture, enemy AI interaction, and 
 
 ---
 
-#### ⚙️ Technical Highlights
+## ⚙️ Technical Highlights
 - Engine: Unity 6 (6000.0.49f1)
 - Programming Language: C#
 - Unity NavMesh for AI pathfinding
@@ -19,14 +19,14 @@ This project emphasizes scalable weapon architecture, enemy AI interaction, and 
 
 ---
 
-#### 🎥 Gameplay Video
+## 🎥 Gameplay Video
 [Watch Gameplay Video](https://youtu.be/KgOUQAODu4I)
 
 ---
 
-#### 🎮 Core Features
+## 🎮 Core Features
 
-##### 🔫 Weapon System
+### 🔫 Weapon System
 - Multiple weapon types (pistol, machine gun, rifle)
 
   - Pistol
@@ -42,7 +42,7 @@ This project emphasizes scalable weapon architecture, enemy AI interaction, and 
 - Base Weapon class with inherited weapon types (Pistol, Rifle, Machine Gun)
 - Polymorphic shooting behavior handled through overridden methods
 
-###### 🔗 Weapons share a common structure for handling:
+#### 🔗 Weapons share a common structure for handling:
 - Fire rate
 - Weapon type
 - Damage dealing
@@ -50,7 +50,7 @@ This project emphasizes scalable weapon architecture, enemy AI interaction, and 
 
 ---
 
-##### 🤖 Enemy AI System
+### 🤖 Enemy AI System
 - Enemies spawn from multiple locations
 
 <img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/41d2a51f-2deb-4437-9139-9b9177631bd8" />
@@ -67,14 +67,14 @@ This project emphasizes scalable weapon architecture, enemy AI interaction, and 
  
 ---
 
-#### 🧠 Gameplay Focus
+## 🧠 Gameplay Focus
 - Combat flow and weapon feel
 - Ammo management pressure
 - Clean system architecture for scalability
 
 ---
 
-#### 📌 Design Goals
+## 📌 Design Goals
 - Build reusable weapon components
 - Practice OOP structure for gameplay systems
 - Dynamic camera FOV adjustment when switching between normal aim and sniper scope
