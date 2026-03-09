@@ -1,5 +1,10 @@
 # FPS Sharp Shooter : Survive!
 
+## 🎥 Gameplay Video
+[Watch Gameplay Video](https://youtu.be/KgOUQAODu4I)
+
+---
+
 #### 🔫 Survive!
 A first-person shooter prototype built in Unity, focused on modular weapon systems, AI behavior using NavMesh, and structured object-oriented programming design.
 This project emphasizes scalable weapon architecture, enemy AI interaction, and gameplay systems such as reloading, magazine management, and ranged combat behavior.
@@ -16,11 +21,6 @@ This project emphasizes scalable weapon architecture, enemy AI interaction, and 
 - Modular shooting & reload system
 - Weapon stats and magazine data stored using ScriptableObjects for easy balancing and reuse
 - Enemy spawn system with multiple spawn points
-
----
-
-## 🎥 Gameplay Video
-[Watch Gameplay Video](https://youtu.be/KgOUQAODu4I)
 
 ---
 
