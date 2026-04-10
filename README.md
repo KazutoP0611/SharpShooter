@@ -53,15 +53,15 @@ This project emphasizes scalable weapon architecture, enemy AI interaction, and 
 ### 🤖 Enemy AI System
 
 - Enemies spawn from multiple locations
-<img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/41d2a51f-2deb-4437-9139-9b9177631bd8" />
+  <img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/41d2a51f-2deb-4437-9139-9b9177631bd8" />
 
 - NavMesh-based pathfinding to chase the player
-<img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/eff08f9a-847d-48ae-9bf8-092710844b31" />
+  <img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/eff08f9a-847d-48ae-9bf8-092710844b31" />
 
 - Cannon-type enemy:
   - Detects player within range
   - Shoots at the player when in attack range
- <img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/bedb0263-d0d9-4626-8729-582487fce191" />
+  <img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/bedb0263-d0d9-4626-8729-582487fce191" />
  
 ---
 
