@@ -29,37 +29,39 @@ This project emphasizes scalable weapon architecture, enemy AI interaction, and 
 ### 🔫 Weapon System
 - Multiple weapon types (pistol, machine gun, rifle)
 
----
-
   - Pistol
     <br><img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/2c7b01e4-757f-4777-948f-67532b35d846" />
     <br><img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/3742094d-7f4a-46a1-8473-1c24eabbe03e" />
-
----
+    <br><br>
 
   - Machine Gun
     <br><img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/441a6680-4d38-4fef-8901-79c8b666ec25" />
     <br><img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/9ebd3e64-a7c2-41f4-b42c-dfd7ffd9cc70" />
-
----
+    <br><br>
     
   - Sniper Rifle
     <br><img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/f71626e1-7a21-40f2-9ad3-4043f5b6e766" />
     <br><img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/5f5cb192-22ba-4941-8792-880e89fd3cfc" />
-
----
+    <br><br>
 
 - Magazine-based ammo system
 - Base Weapon class with inherited weapon types (Pistol, Rifle, Machine Gun)
 - Polymorphic shooting behavior handled through overridden methods
+- 🔗 Weapons share a common structure for handling:
+  - Fire rate
+  - Weapon type
+  - Damage dealing
+  - Ammo count tracking
+ 
+<br>
 
-#### 🔗 Weapons share a common structure for handling:
-- Fire rate
-- Weapon type
-- Damage dealing
-- Ammo count tracking
+### 🔭 Sniper Scope & FOV System
+- Dynamic camera FOV adjustment when switching between normal aim and sniper scope
+- Zoomed precision view for long range targeting
 
----
+<img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/23922841-8c48-4392-8020-7665a5990774" />
+
+<br><br>
 
 ### 🤖 Enemy AI System
 
@@ -88,10 +90,7 @@ This project emphasizes scalable weapon architecture, enemy AI interaction, and 
 ## 📌 Design Goals
 - Build reusable weapon components
 - Practice OOP structure for gameplay systems
-- Dynamic camera FOV adjustment when switching between normal aim and sniper scope
 - Create a clean, extendable combat prototype
-
-<img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/23922841-8c48-4392-8020-7665a5990774" />
 
 ---
 
