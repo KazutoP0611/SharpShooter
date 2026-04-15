@@ -93,7 +93,6 @@ This project emphasizes scalable weapon architecture, enemy AI interaction, and 
 
 <img width="427" height="240" alt="image" src="https://github.com/user-attachments/assets/23922841-8c48-4392-8020-7665a5990774" />
 
-
 ---
 
 This project focuses on system architecture, AI interaction, and scalable weapon design within a low-poly FPS environment.
